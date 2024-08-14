@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_boilerplate/routes/routes_config.dart';
 import 'package:flutter_bloc_boilerplate/theme/theme.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'features/auth/data/auth_repository_impl.dart';
 import 'features/auth/data/source/remote/auth_api.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
             routerConfig: routerConfig,
             theme: themeConfig,
             debugShowCheckedModeBanner: false,
+            builder: FToastBuilder(),
           ),
         );
       }),
