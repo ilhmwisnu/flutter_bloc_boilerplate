@@ -8,7 +8,10 @@ class FormLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text(text), SizedBox(height: 4)],
+      children: [
+        Text(text),
+        SizedBox(height: 4),
+      ],
     );
   }
 }
