@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_boilerplate/features/auth/domain/usecase/get_profile.dart';
 import 'package:flutter_bloc_boilerplate/features/auth/presentation/bloc/auth_event.dart';
 import 'package:flutter_bloc_boilerplate/features/auth/presentation/bloc/auth_state.dart';
-import 'package:flutter_bloc_boilerplate/utils/data_state.dart';
+import 'package:flutter_bloc_boilerplate/core/data_state.dart';
 
 import '../../domain/usecase/login.dart';
 

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc_boilerplate/features/auth/data/dto/profile_dto.dart';
-import 'package:flutter_bloc_boilerplate/utils/dio.dart';
+import 'package:flutter_bloc_boilerplate/core/dio.dart';
 
 class AuthApi {
   final Dio _client = restClient;

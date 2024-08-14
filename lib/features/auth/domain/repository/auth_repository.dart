@@ -1,4 +1,4 @@
-import 'package:flutter_bloc_boilerplate/utils/data_state.dart';
+import 'package:flutter_bloc_boilerplate/core/data_state.dart';
 
 import '../entity/auth.dart';
 
