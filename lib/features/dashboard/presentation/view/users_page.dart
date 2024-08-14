@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../utils/base_state.dart';
-import 'cubit/users_cubit.dart';
-import 'cubit/users_state.dart';
+import '../../../../core/base_state.dart';
+import '../cubit/users_cubit.dart';
+import '../cubit/users_state.dart';
 
 class UsersPage extends StatelessWidget {
   const UsersPage({super.key});

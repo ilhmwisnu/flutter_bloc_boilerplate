@@ -1,6 +1,7 @@
 import 'package:flutter_bloc_boilerplate/features/dashboard/domain/entity/user.dart';
-import 'package:flutter_bloc_boilerplate/utils/pagination.dart';
+import 'package:flutter_bloc_boilerplate/core/data_state.dart';
+import 'package:flutter_bloc_boilerplate/core/pagination.dart';
 
 abstract class UserRepository {
-  Future<Pagination<User>> getUsers();
+  Future<DataState<Pagination<User>>> getUsers();
 }

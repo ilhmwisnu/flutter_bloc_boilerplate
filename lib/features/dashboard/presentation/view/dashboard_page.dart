@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'profile/profile_page.dart';
-import 'user/users_page.dart';
+import 'profile_page.dart';
+import 'users_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
