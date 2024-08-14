@@ -7,22 +7,14 @@ class AuthApi {
 
   Future<String> login(
       {required String email, required String password}) async {
-    try {
-      final res = await _client
-          .post("/login", data: {"email": email, "password": password});
-      return res.data["token"];
-    } on DioException catch (_) {
-      rethrow;
-    }
+    final res = await _client
+        .post("/login", data: {"email": email, "password": password});
+    return res.data["token"];
   }
 
   Future<ProfileDto> getProfile() async {
-    try {
-      final res = await _client.get("/profile");
+    final res = await _client.get("/profile");
 
-      return ProfileDto.fromJson(res.data);
-    } on DioException catch (_) {
-      rethrow;
-    }
+    return ProfileDto.fromJson(res.data);
   }
 }
