@@ -16,6 +16,14 @@ final themeConfig = ThemeData(
       borderRadius: BorderRadius.circular(15),
       borderSide: BorderSide(color: Colors.grey, width: 1),
     ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(15),
+      borderSide: BorderSide(color: Colors.redAccent, width: 1),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(15),
+      borderSide: BorderSide(color: Colors.red, width: 1),
+    ),
     filled: true,
     fillColor: Colors.grey.shade100,
   ),
@@ -23,6 +31,7 @@ final themeConfig = ThemeData(
     style: ButtonStyle(
       minimumSize: MaterialStatePropertyAll(Size(0, 48)),
       backgroundColor: MaterialStatePropertyAll(Colors.amber),
+      foregroundColor: MaterialStatePropertyAll(Colors.black),
       elevation: MaterialStatePropertyAll(0),
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
