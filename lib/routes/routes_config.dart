@@ -5,9 +5,9 @@ import 'package:flutter_bloc_boilerplate/features/dashboard/data/user_repository
 import 'package:flutter_bloc_boilerplate/features/dashboard/domain/usecase/get_all_user.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/dashboard/presentation/dashboard_page.dart';
-import '../features/dashboard/presentation/user/cubit/users_cubit.dart';
-import '../features/dashboard/presentation/user/detail/detail_page.dart';
+import '../features/dashboard/presentation/view/dashboard_page.dart';
+import '../features/dashboard/presentation/cubit/users_cubit.dart';
+import '../features/dashboard/presentation/view/user_detail_page.dart';
 
 final routerConfig = GoRouter(
   initialLocation: "/login",
