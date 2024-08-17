@@ -23,4 +23,17 @@ class UserRepositoryImpl extends UserRepository {
       return DataFailure(errorMessage: e.toString());
     }
   }
+  
+  @override
+  Future<DataState<User>> getUserById(int id) async {
+   try {
+      final userData = await _userApi.getUserById(id);
+
+      return DataSuccess(data: userData);
+    } on DioException catch (e) {
+      return DataFailure(errorMessage: e.response?.data["message"] ?? e.message );
+    } catch (e) {
+      return DataFailure(errorMessage: e.toString());
+    }
+  }
 }

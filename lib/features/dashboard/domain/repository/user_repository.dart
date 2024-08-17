@@ -4,4 +4,7 @@ import 'package:flutter_bloc_boilerplate/core/pagination.dart';
 
 abstract class UserRepository {
   Future<DataState<Pagination<User>>> getUsers();
+
+  Future<DataState<User>> getUserById(int id);
+
 }

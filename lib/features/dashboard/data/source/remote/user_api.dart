@@ -23,4 +23,10 @@ class UserApi {
 
     return pagination;
   }
+
+  Future<UserDto> getUserById(int id) async {
+    final res = await _client.get("/users/${id}");
+
+    return UserDto.fromJson(res.data["data"]);
+  }
 }

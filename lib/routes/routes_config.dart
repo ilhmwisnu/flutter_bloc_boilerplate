@@ -3,6 +3,8 @@ import 'package:flutter_bloc_boilerplate/features/auth/presentation/view/login_p
 import 'package:flutter_bloc_boilerplate/features/dashboard/data/source/remote/user_api.dart';
 import 'package:flutter_bloc_boilerplate/features/dashboard/data/user_repository_impl.dart';
 import 'package:flutter_bloc_boilerplate/features/dashboard/domain/usecase/get_all_user.dart';
+import 'package:flutter_bloc_boilerplate/features/dashboard/domain/usecase/get_user_by_id.dart';
+import 'package:flutter_bloc_boilerplate/features/dashboard/presentation/cubit/user_detail_cubit.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/dashboard/presentation/view/dashboard_page.dart';
@@ -12,21 +14,28 @@ import '../features/dashboard/presentation/view/user_detail_page.dart';
 final routerConfig = GoRouter(
   initialLocation: "/login",
   routes: [
-    GoRoute(
-      path: "/login",
-      builder: (context, state) => LoginPage()
-    ),
+    GoRoute(path: "/login", builder: (context, state) => LoginPage()),
     GoRoute(
       path: "/dashboard",
       builder: (context, state) => BlocProvider(
-        create: (context) => UsersCubit(GetAllUser(userRepository: UserRepositoryImpl(userApi: UserApi()))),
+        create: (context) => UsersCubit(
+          GetAllUser(
+            userRepository: UserRepositoryImpl(
+              userApi: UserApi(),
+            ),
+          ),
+        ),
         child: DashboardPage(),
       ),
     ),
     GoRoute(
       path: "/users/:id",
-      builder: (context, state) =>
-          UserDetailPage(id: state.pathParameters['id']!),
+      builder: (context, state) => BlocProvider(
+        create: (context) => UserDetailCubit(
+            GetUserById(userRepository: UserRepositoryImpl(userApi: UserApi())),
+            id: int.parse(state.pathParameters['id']!)),
+        child: UserDetailPage(id: state.pathParameters['id']!),
+      ),
     ),
   ],
 );

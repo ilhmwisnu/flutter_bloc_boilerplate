@@ -30,7 +30,7 @@ class UsersPage extends StatelessWidget {
                 final user = state.data![index];
                 return ListTile(
                   onTap: () {
-                    context.push("/users/123");
+                    context.push("/users/${user.id}");
                   },
                   leading: CircleAvatar(
                     radius: 24,
